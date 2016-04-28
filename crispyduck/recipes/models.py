@@ -4,19 +4,6 @@ from django.db import models
 class Recipe(models.Model):
 	name = models.CharField(max_length=50, blank=False)
 
-class Ingredient(models.Model):
-	name = models.CharField(max_length=50, blank=False)
-	instructions = models.CharField(blank=False)
-
-class RecipeIngredients(models.Model):
-	recipe = models.ForeignKey(Recipe)
-	ingredient = models.ForeignKey(Ingredient)
-	unit = models.ForeignKey(Unit)
-    quantity = DecimalField(blank = False, decimal_places = 1)
-	
-	def get_dependencies(self):
-		pass
-
 class Unit(models.Model):
 	TEASPOON = 'tsp'
 	TABLESPOON = 'tbsp'
@@ -35,4 +22,18 @@ class Unit(models.Model):
 	INCH = 'in'
 	CM = 'cm'
 	MM = 'mm'
+
+class Ingredient(models.Model):
+	name = models.CharField(max_length=50, blank=False)
+	instructions = models.CharField(max_length=300, blank=False)
+
+class RecipeIngredients(models.Model):
+	recipe = models.ForeignKey(Recipe)
+	ingredient = models.ForeignKey(Ingredient)
+	unit = models.ForeignKey(Unit)
+	quantity = models.DecimalField(max_digits = 1, blank = False, decimal_places = 1)
+	
+	def get_dependencies(self):
+		pass
+
 
