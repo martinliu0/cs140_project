@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth import models as auth_models
 
 # Create your models here.
 class Recipe(models.Model):
@@ -35,4 +37,10 @@ class Unit(models.Model):
 	INCH = 'in'
 	CM = 'cm'
 	MM = 'mm'
+
+class Review(models.Model):
+    stars = models.IntegerField(blank = False, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    review_text = models.TextField()
+    recipe = models.ForeignKey(Recipe)
+    user = models.ForeignKey(auth_models.User)
 
