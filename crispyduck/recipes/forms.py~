@@ -6,7 +6,7 @@ class IngredientForm(forms.Form):
     
 class FilterForm(forms.Form):
     ingredient_search = forms.CharField(max_length=50, required=True)
-    num_ingredients = forms.IntegerField(label="Num of Ingredients", min_value=3, required=True)
+    num_ingredients = forms.IntegerField(label="Num of Ingredients", min_value=2, required=True)
     
 class ReviewForm(forms.ModelForm):
     class Meta:
