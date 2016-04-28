@@ -5,16 +5,17 @@ class Recipe(models.Model):
 	name = models.CharField(max_length=50, blank=False)
 
 
-
 class Ingredient(models.Model):
 	name = models.CharField(max_length=50, blank=False)
-
-	instructions = #TBD
+	instructions = models.CharField(blank=False)
 
 class RecipeIngredients(models.Model):
 	recipe = models.ForeignKey(Recipe)
 	ingredient = models.ForeignKey(Ingredient)
 	quantity = models.ForeignKey(Unit)
+
+	def get_dependencies(self):
+		pass
 
 
 class Unit(models.Model):
@@ -36,4 +37,3 @@ class Unit(models.Model):
 	CM = 'cm'
 	MM = 'MM'
 
-	
