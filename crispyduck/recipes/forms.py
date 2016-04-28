@@ -1,10 +1,11 @@
 from django import forms 
 from .models import Review
 
-class IngredientForm(forms.Form):
-    ingredient_search = forms.CharField(max_length=50, required=True)
+class RecipeForm(forms.Form):
+    recipe_search = forms.CharField(max_length=50, required=True)
     
 class FilterForm(forms.Form):
+    recipe_search = forms.CharField(max_length=50, required=True)
     ingredient_search = forms.CharField(max_length=50, required=True)
     num_ingredients = forms.IntegerField(label="Num of Ingredients", min_value=2, required=True)
     
