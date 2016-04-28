@@ -34,5 +34,5 @@ class Unit(models.Model):
 
 	INCH = 'in'
 	CM = 'cm'
-	MM = 'mm'
+	MM = 'MM'
 
