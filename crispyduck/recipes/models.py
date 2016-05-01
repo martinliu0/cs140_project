@@ -40,7 +40,7 @@ class RecipeIngredients(models.Model):
 	ingredient = models.ForeignKey(Ingredient)
 	unit = models.ForeignKey(Unit)
 
-    quantity = models.DecimalField(max_digits=2, blank = False, decimal_places = 1)
+	quantity = models.DecimalField(max_digits=2, blank = False, decimal_places = 1)
 
 	
 	def get_dependencies(self):

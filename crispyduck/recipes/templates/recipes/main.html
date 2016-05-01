@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block main %}
-<div class="box">
-  <div class="container-1">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search recipes..." />
-  </div>
-</div>
-    </section>
-  </body>
-</html>
+
+
+<section class="webdesigntuts-workshop">
+	<section class="welcome">
+		<h1>Welcome to Crispy Duck Recipes!</h1>
+	</section>
+	<form action="{% url 'main' %}" method="get">
+		{% csrf_token %}
+    	{{ form }}	    
+		<input type="search" placeholder="Search recipes....">		    	
+		<button><i class="fa fa-search"></i></button>
+	</form>
+</section>
 
 {% endblock main %}

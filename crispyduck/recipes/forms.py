@@ -1,8 +1,8 @@
 from django import forms 
 from .models import Review
 
-class RecipeForm(forms.Form):
-    recipe_search = forms.CharField(max_length=50, required=True)
+class MainForm(forms.Form):
+    recipe_name = forms.CharField(max_length=50, required=True)
     
 class FilterForm(forms.Form):
     recipe_search = forms.CharField(max_length=50, required=True)
