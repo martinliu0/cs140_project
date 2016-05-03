@@ -3,7 +3,24 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth import models as auth_models
 
 # Create your models here.
+class Unit(models.Model):
+	TEASPOON = 'tsp'
+	TABLESPOON = 'tbsp'
+	CUP = 'c'
+	PINT = 'pt'
+	GALLON = 'gal'
+	LITER = 'L'
+	ML = 'cc'
 
+	POUND = 'lb'
+	OUNCE = 'oz'
+	MG = 'mg'
+	G = 'g'
+	KG = 'kg'
+
+	INCH = 'in'
+	CM = 'cm'
+	MM = 'mm'
 
 class Recipe(models.Model):
 	APPETIZER = "AT"
@@ -29,17 +46,28 @@ class Recipe(models.Model):
 		return self.name
 
 
+class Ingredient(models.Model):
+	name = models.CharField(max_length=50, blank=False)
+	recipe
+
 class RecipeInstruction(models.Model):
 	recipe = models.ForeignKey(Recipe)
 	step = models.IntegerField(default=0, validators=[MaxValueValidator(20), MinValueValidator(1)])
 	ingredient = models.CharField(max_length=100, blank=False, default="")
 	instruction = models.CharField(max_length=500, blank=False, default="")
+	quantity = models.DecimalField(max_digits=3, blank = False, decimal_places = 1)
+	unit = models.ForeignKey(Unit)
 
 	def __str__(self):
 		return "Recipe: {} | Step: {} | Ingredient: {}".format(self.recipe, self.step, self.ingredient)
 
 
+	def get_instruction(self):
+		full_instruction = self.instruction.replace("__", self.ingredient)
+		return "{}. {}".format(self.step, full_instruction)
 
+	def get_ingredient(self):
+		return "{} {} {}".format(self.quantity, self.unit, self.ingredient)
 
 class Review(models.Model):
     stars = models.IntegerField(blank = False, validators=[MinValueValidator(1), MaxValueValidator(5)])
