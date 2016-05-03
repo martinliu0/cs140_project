@@ -7,9 +7,7 @@
 		<h1>Welcome to Crispy Duck Recipes!</h1>
 	</section>
 	<form action="{% url 'main' %}" method="get">
-		{% csrf_token %}
-    	{{ form }}	    
-		<input type="search" placeholder="Search recipes....">		    	
+		{{search_form}}
 		<button><i class="fa fa-search"></i></button>
 	</form>
 </section>

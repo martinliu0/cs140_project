@@ -1,4 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin:400);
+body #filters {
+  position: fixed;
+  width: 20%;
+  left: 0%;
+  font-size: smaller;
+  color: #FFF0B8;
+  background-color: #7887AB;
+  border-radius: 5px;
+  margin: 1px;
+  padding: 1px;
+}
+
 .welcome h1{
 
     top: 20%;
@@ -142,11 +154,128 @@
 @keyframes glow {
     0% {
 		border-color: white;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+		box-shadow: 0 0 5px rgba(0,150,0,.2), inset 0 0 5px rgba(0,200,0,.1), 0 2px 0 #000;
     }	
     100% {
 		border-color: white;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+		box-shadow: 0 0 20px rgba(0,150,0,.6), inset 0 0 10px rgba(0,200,0,.4), 0 2px 0 #000;
     }
+}
+
+/* index page */
+
+html, body {
+  background-color: #f0f2fa;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  color: #555f77;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1rem;
+  color: #555f77;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ced2db;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #ced2db;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #ced2db;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #ced2db;
+}
+
+p {
+  line-height: 1.3125rem;
+}
+
+.recipe-block {
+  margin: 2.5rem auto 0;
+  max-width: 60.75rem;
+  padding: 0 1.25rem;
+
+}
+
+.recipe {
+  margin-bottom: 1.25rem;
+  display: table;
+  width: 100%;
+  min-height: 5.3125rem;
+}
+
+.image {
+  padding-top: 1.25rem;
+  padding-right: 0.9375rem;
+  display: table-cell;
+  width: 3.5rem;
+}
+.image .avatar {
+  height: 5.75rem;
+  width: 5.75rem;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.recipe-block {
+  padding: 1rem;
+  background-color: #fff;
+  display: table-cell;
+  vertical-align: top;
+  border-radius: 0.1875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+.recipe-block textarea {
+  width: 100%;
+  resize: none;
+}
+
+.recipe-description {
+  margin-bottom: 1.25rem;
+}
+
+.extra-info {
+  color: #acb4c2;
+  font-size: 0.875rem;
+}
+
+.time {
+  float: left;
+}
+
+.recipe-actions {
+  float: right;
+}
+.recipe-actions li {
+  display: inline;
+  margin: -2px;
+  cursor: pointer;
+}
+.recipe-actions li.save-recipe {
+  padding-right: 0.75rem;
+  border-right: 1px solid #e1e5eb;
+}
+.recipe-actions li.review {
+  padding-left: 0.75rem;
+  padding-right: 0.125rem;
+}
+.recipe-actions li:hover {
+  color: #0095ff;
+}
+
+
+button:hover {
+    /* here copy default .btn class styles */
+   	 color: inherit;
+    /* or something like that */
 }
 

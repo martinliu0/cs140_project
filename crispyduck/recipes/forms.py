@@ -2,7 +2,7 @@ from django import forms
 from .models import Review
 
 class MainForm(forms.Form):
-    recipe_name = forms.CharField(max_length=50, required=True)
+    recipe_name = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={'placeholder': 'Search recipes....'}))
     
 class FilterForm(forms.Form):
     recipe_search = forms.CharField(max_length=50, required=True)

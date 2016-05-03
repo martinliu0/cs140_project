@@ -4,47 +4,40 @@ from django.contrib.auth import models as auth_models
 
 # Create your models here.
 
-class Recipe(models.Model):
-	name = models.CharField(max_length=50, blank=False)
-
-class Unit(models.Model):
-	TEASPOON = 'tsp'
-	TABLESPOON = 'tbsp'
-	CUP = 'c'
-	PINT = 'pt'
-	GALLON = 'gal'
-	LITER = 'L'
-	ML = 'cc'
-
-	POUND = 'lb'
-	OUNCE = 'oz'
-	MG = 'mg'
-	G = 'g'
-	KG = 'kg'
-
-	INCH = 'in'
-	CM = 'cm'
-	MM = 'mm'
-
 
 class Recipe(models.Model):
-	name = models.CharField(max_length=50, blank=False)
+	APPETIZER = "AT"
+	MAIN = "MN"
+	DESSERT = "DS"
+
+	MEAL_CHOICES = ((MAIN, "Main"), (DESSERT, "Dessert"), (APPETIZER, "Appetizer"))
+
+	name = models.CharField(max_length=100, blank=False)
+	image = models.ImageField(blank=False, default="http://ba3d96e768581514f6ec-e6b856593874a8f38a8aa2d89e1f03ce.r54.cf2.rackcdn.com/default_food_large.jpg") 
+	description = models.CharField(max_length=500, blank=False, default="")
+
+	time = models.IntegerField(default=0, validators=[MaxValueValidator(600), MinValueValidator(0)])
+	meal = models.CharField(max_length=2, choices=MEAL_CHOICES, default=MAIN)
+
+	def get_time_str(self):
+		time = float(self.time)
+		if float(self.time) > 60.0:
+			return "{} hr {} min".format(int(time // 60), int(time % 60))
+		return "{} min".format(int(time))
+
+	def __str__(self):
+		return self.name
 
 
-class Ingredient(models.Model):
-	name = models.CharField(max_length=50, blank=False)
-	instructions = models.CharField(max_length=300, blank=False)
-
-class RecipeIngredients(models.Model):
+class RecipeInstruction(models.Model):
 	recipe = models.ForeignKey(Recipe)
-	ingredient = models.ForeignKey(Ingredient)
-	unit = models.ForeignKey(Unit)
+	step = models.IntegerField(default=0, validators=[MaxValueValidator(20), MinValueValidator(1)])
+	ingredient = models.CharField(max_length=100, blank=False, default="")
+	instruction = models.CharField(max_length=500, blank=False, default="")
 
-	quantity = models.DecimalField(max_digits=2, blank = False, decimal_places = 1)
+	def __str__(self):
+		return "Recipe: {} | Step: {} | Ingredient: {}".format(self.recipe, self.step, self.ingredient)
 
-	
-	def get_dependencies(self):
-		pass
 
 
 
