@@ -1,23 +1,16 @@
 {% extends "base.html" %}
 {% block main %}
-<!-- 	<section id="filters">
-      <form action="{% url 'index' %}" method="get">
-        {{ search_form.as_p }}
-        <input type="submit" value="Filter recipes">
-      </form>
-      <p><a href="{% url 'index' %}?reset=true">Reset filters</a>
-    </section> -->
-
-    <section id="recipe-list">
-    {% for recipe in recipes %}
+<div class="recipe-list">
+	{% for recipe in recipes %}
 		<div class="recipe">
 			<div class="image">
-				<img class="avatar" src="{{ recipe.image.url }}"></div>
+				<!-- <img class="avatar" src="{{ recipe.image.url }}"> -->
+				<div class="avatar" style="background-image: url('{{ recipe.image.url }}')"></div>
 			</div>
 			<div class="recipe-block">
 				<h1> {{ recipe.name }} </h1>
-				<p class="recipe-description"> {{ recipe.description|truncatewords:40 }}</p>
-					<div class="extra-info">
+				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
+					<div class="other-stuff">
 						<div class="meal">
 							{% if recipe.meal == 'MN'%}
 								<button type="button" class="btn btn-primary-outline">Main</button>
@@ -36,53 +29,6 @@
 				</div>
 			</div>
     {% endfor %}
-    </section>
-{% endblock main %}
 
-<!-- <div class="comments">
-	<div class="comment-wrap">
-		<div class="photo">
-			<div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')"></div>
-		</div>
-		<div class="comment-block">
-			<form action="">
-				<textarea name="" id="" cols="30" rows="3" placeholder="Add comment..."></textarea>
-			</form>
-		</div>
-	</div>
-
-	<div class="comment-wrap">
-		<div class="photo">
-			<div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')"></div>
-		</div>
-		<div class="comment-block">
-			<p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum. Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi
-				sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</p>
-				<div class="bottom-comment">
-					<div class="comment-date">Aug 24, 2014 @ 2:35 PM</div>
-					<ul class="comment-actions">
-						<li class="complain">Complain</li>
-						<li class="reply">Reply</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div class="comment-wrap">
-			<div class="photo">
-				<div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/felipenogs/128.jpg')"></div>
-			</div>
-			<div class="comment-block">
-				<p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum. Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam.</p>
-				<div class="bottom-comment">
-					<div class="comment-date">Aug 23, 2014 @ 10:32 AM</div>
-					<ul class="comment-actions">
-						<li class="complain">Complain</li>
-						<li class="reply">Reply</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div> -->
+</div>
+{% endblock main %} 

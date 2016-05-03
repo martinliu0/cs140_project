@@ -199,11 +199,10 @@ p {
   line-height: 1.3125rem;
 }
 
-.recipe-block {
+.recipe-list {
   margin: 2.5rem auto 0;
   max-width: 60.75rem;
   padding: 0 1.25rem;
-
 }
 
 .recipe {
@@ -214,16 +213,17 @@ p {
 }
 
 .image {
-  padding-top: 1.25rem;
-  padding-right: 0.9375rem;
+  padding-top: 0.625rem;
   display: table-cell;
   width: 3.5rem;
 }
 .image .avatar {
-  height: 5.75rem;
-  width: 5.75rem;
+  height: 8.25rem;
+  width: 8.25rem;
   border-radius: 50%;
   background-size: contain;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .recipe-block {
@@ -243,13 +243,14 @@ p {
   margin-bottom: 1.25rem;
 }
 
-.extra-info {
+.other-stuff {
   color: #acb4c2;
   font-size: 0.875rem;
 }
 
-.time {
+.meal {
   float: left;
+  display: inline;
 }
 
 .recipe-actions {
@@ -270,12 +271,5 @@ p {
 }
 .recipe-actions li:hover {
   color: #0095ff;
-}
-
-
-button:hover {
-    /* here copy default .btn class styles */
-   	 color: inherit;
-    /* or something like that */
 }
 
