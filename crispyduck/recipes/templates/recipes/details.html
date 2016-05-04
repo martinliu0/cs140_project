@@ -20,6 +20,7 @@
                     <li class="new-review">{{ review }}</li>
                 {% endfor %}
             {% endif %}
-            <p><a href="{% url 'review' recipe.id %}">Write a review</a>
+        <p><a href="{% url 'review' recipe.id %}">Write a review</a>
+        <p>Back to <a href="{% url 'index' %}">search results</a>
     {% endblock main %}
 </html>

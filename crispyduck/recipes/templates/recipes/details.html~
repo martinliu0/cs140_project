@@ -7,9 +7,9 @@
         <p><h2><span class="recipename">{{ recipe.name }}</span></h2></p>
         <br>
         {% if recipe.image.url.width > recipe.image.url.height %}
-            <img src="{{ recipe.image.url }}" width=100>
+            <img src="{{ recipe.image.url }}" width=300>
         {% else %}
-            <img src="{{ recipe.image.url }}" height=100>
+            <img src="{{ recipe.image.url }}" height=300>
         {% endif %}
         <br><br>
         <p class="description">{{ recipe.description }}
@@ -20,6 +20,7 @@
                     <li class="new-review">{{ review }}</li>
                 {% endfor %}
             {% endif %}
-            <p><a href="{% url 'review' recipe.id %}">Write a review</a>
+        <p><a href="{% url 'review' recipe.id %}">Write a review</a>
+        <p>Back to <a href="{% url 'index' %}">search results</a>
     {% endblock main %}
 </html>

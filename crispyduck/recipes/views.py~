@@ -23,15 +23,32 @@ def main_view(request):
 
 
 def index_view(request):
-	# if request.method == 'GET':
-	# 	search_form = MainForm(request.GET)
-	# 	if search_form.is_valid():
-	# 		recipes = Recipe.objects.all()
-	# 		print(recipes)
-	# 		search_string = search_form.cleaned_data.get('recipe_name', None)
-	# 		recipes = recipes.filter(name__icontains=search_string)
-	# 		return render(request, 'recipes/index.html', {'recipes': recipes})
-	return render(request, 'recipes/index.html')
+    recipes = Recipe.objects.all()
+    
+    if 'reset' in request.GET:
+        if 'sortfilt' in request.session:
+            request.session.pop('sortfilt')
+        return redirect(reverse('index'))
+
+    settings = request.session.get('sortfilt', {})
+    
+    search_form = MainForm(request.GET)
+    
+    # ignore form errors; just get any cleaned data available
+    if search_form.is_valid():
+        pass
+
+    search_string = search_form.cleaned_data.get('recipe_search', None)
+    if search_string:
+        recipes = recipes.filter(name__icontains=search_string)
+        settings['recipe_search'] = search_string
+    elif 'recipe_search' in settings:
+        val = settings.get('recipe_search')
+        recipes = recipes.filter(name__icontains=val)
+        fromsettings = True
+        
+    return render(request, "recipes/index.html", {'recipes':recipes, 'search_form':MainForm(initial=search_form.cleaned_data)})
+	#return render(request, 'recipes/index.html')
 	
 def details_view(request, id):
     recipe = get_object_or_404(Recipe, id=id)
