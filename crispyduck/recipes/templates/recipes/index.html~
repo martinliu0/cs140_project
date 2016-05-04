@@ -8,7 +8,7 @@
 				<div class="avatar" style="background-image: url('{{ recipe.image.url }}')"></div>
 			</div>
 			<div class="recipe-block">
-				<a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a>
+				<a href="{% url 'details' %}"><h1>{{ recipe.name }}</h1></a>
 				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
 					<div class="other-stuff">
 						<div class="meal">

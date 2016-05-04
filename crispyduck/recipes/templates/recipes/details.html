@@ -3,16 +3,17 @@
 
 <!DOCTYPE html>
 <html>
-    {% blockmain %}
-        <p><b><span class="recipename">{{ recipe.name|title }}</span></b></p>
+    {% block main %}
+        <p><h2><span class="recipename">{{ recipe.name }}</span></h2></p>
         <br>
         {% if recipe.image.url.width > recipe.image.url.height %}
-            <img src="{{ recipe.image.url }}" width=100>
+            <img src="{{ recipe.image.url }}" width=300>
         {% else %}
-            <img src="{{ recipe.image.url }}" height=100>
+            <img src="{{ recipe.image.url }}" height=300>
         {% endif %}
-        <br>
+        <br><br>
         <p class="description">{{ recipe.description }}
+        <br>
         <div class="review"><p>Reviews</div>
             {% if recipe.review_set %}
                 {% for review in recipe.review_set.all %}
@@ -20,5 +21,5 @@
                 {% endfor %}
             {% endif %}
             <p><a href="{% url 'review' recipe.id %}">Write a review</a>
-    {% endblockmain %}
+    {% endblock main %}
 </html>

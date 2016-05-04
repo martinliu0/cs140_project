@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import MainForm, FilterForm, ReviewForm
 from .models import Recipe
-
 # Create your views here.
 def main_view(request):
 	print(request.GET)
