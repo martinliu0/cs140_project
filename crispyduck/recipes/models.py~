@@ -3,24 +3,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth import models as auth_models
 
 # Create your models here.
-class Unit(models.Model):
-	TEASPOON = 'tsp'
-	TABLESPOON = 'tbsp'
-	CUP = 'c'
-	PINT = 'pt'
-	GALLON = 'gal'
-	LITER = 'L'
-	ML = 'cc'
-
-	POUND = 'lb'
-	OUNCE = 'oz'
-	MG = 'mg'
-	G = 'g'
-	KG = 'kg'
-
-	INCH = 'in'
-	CM = 'cm'
-	MM = 'mm'
 
 class Recipe(models.Model):
 	APPETIZER = "AT"
@@ -31,7 +13,9 @@ class Recipe(models.Model):
 
 	name = models.CharField(max_length=100, blank=False)
 	image = models.ImageField(blank=False, default="http://ba3d96e768581514f6ec-e6b856593874a8f38a8aa2d89e1f03ce.r54.cf2.rackcdn.com/default_food_large.jpg") 
-	description = models.CharField(max_length=500, blank=False, default="")
+	description = models.CharField(max_length=800, blank=False, default="")
+
+	ingredients = models.CharField(max_length=800, blank=False, default="")
 
 	time = models.IntegerField(default=0, validators=[MaxValueValidator(600), MinValueValidator(0)])
 	meal = models.CharField(max_length=2, choices=MEAL_CHOICES, default=MAIN)
@@ -45,29 +29,24 @@ class Recipe(models.Model):
 	def __str__(self):
 		return self.name
 
-
-class Ingredient(models.Model):
-	name = models.CharField(max_length=50, blank=False)
-	recipe
+	def get_ingredients(self):
+		return self.ingredients.split("**")
 
 class RecipeInstruction(models.Model):
+	
 	recipe = models.ForeignKey(Recipe)
 	step = models.IntegerField(default=0, validators=[MaxValueValidator(20), MinValueValidator(1)])
-	ingredient = models.CharField(max_length=100, blank=False, default="")
-	instruction = models.CharField(max_length=500, blank=False, default="")
-	quantity = models.DecimalField(max_digits=3, blank = False, decimal_places = 1)
-	unit = models.ForeignKey(Unit)
+
+	instruction = models.CharField(max_length=1000, blank=False, default="")
+
 
 	def __str__(self):
-		return "Recipe: {} | Step: {} | Ingredient: {}".format(self.recipe, self.step, self.ingredient)
+		return "Recipe: {} | Step: {}".format(self.recipe, self.step)
 
 
 	def get_instruction(self):
-		full_instruction = self.instruction.replace("__", self.ingredient)
-		return "{}. {}".format(self.step, full_instruction)
+		return "{}. {}".format(self.step, self.instruction)
 
-	def get_ingredient(self):
-		return "{} {} {}".format(self.quantity, self.unit, self.ingredient)
 
 class Review(models.Model):
     stars = models.IntegerField(blank = False, validators=[MinValueValidator(1), MaxValueValidator(5)])

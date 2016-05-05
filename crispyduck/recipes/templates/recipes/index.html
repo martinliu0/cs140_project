@@ -12,16 +12,21 @@
 				<a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a>
 				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
 					<div class="other-stuff">
-						<div class="meal">
+					    <ul class="meal-time">
+					       <li class="meal"><div class="meal">
+						
 							{% if recipe.meal == 'MN'%}
-								<button type="button" class="btn btn-primary-outline">Main</button>
+								<div type="button" class="btn btn-primary-outline">Main</div>
 							{% elif recipe.meal == 'DS' %}
-								<button type="button" class="btn btn-success-outline">Dessert</button>
+								<div type="button" class="btn btn-success-outline">Dessert</div>
 							{% else %}
-								<span type="button" class="btn btn-info-outline" nohover>Appetizer</span>
+								<div type="button" class="btn btn-info-outline" nohover>Appetizer</div>
 							{% endif %}
-						</div>
-						<div class="time">{{ recipe.get_time_str }}</div>
+						</div> </li>
+						<li class="time">{{ recipe.get_time_str }}</li>
+					    </ul>
+						
+						
 						<ul class="recipe-actions">
 							<li class="save-recipe">Save</li>
 							<li class="review"><a href="{% url 'review' recipe.id %}">Review</a></li>
