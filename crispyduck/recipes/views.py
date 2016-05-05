@@ -62,7 +62,7 @@ def review_view(request, id):
         form = ReviewForm(request.POST)
         if form.is_valid():
             recipe.review_set.create(stars=form.cleaned_data['stars'], review_text=form.cleaned_data['review_text'], user=request.user)
-            return redirect('review', id=recipe.id)
+            return redirect('details', id=recipe.id)
     else:
         form = ReviewForm()
     return render(request, "recipes/review.html", {'form':form, 'recipe':recipe})
