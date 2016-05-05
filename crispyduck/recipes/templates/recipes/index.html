@@ -13,8 +13,7 @@
 				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
 					<div class="other-stuff">
 					    <ul class="meal-time">
-					       <li class="meal"><div class="meal">
-						
+					       <li class="meal">
 							{% if recipe.meal == 'MN'%}
 								<div type="button" class="btn btn-primary-outline">Main</div>
 							{% elif recipe.meal == 'DS' %}
@@ -22,8 +21,8 @@
 							{% else %}
 								<div type="button" class="btn btn-info-outline" nohover>Appetizer</div>
 							{% endif %}
-						</div> </li>
-						<li class="time">{{ recipe.get_time_str }}</li>
+							</li>
+							<li class="time">{{ recipe.get_time_str }}</li>
 					    </ul>
 						
 						

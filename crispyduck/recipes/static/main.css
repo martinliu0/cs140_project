@@ -248,16 +248,25 @@ p {
   font-size: 0.875rem;
 }
 
+
 .meal-time{
   float: left;
-
+}
+.meal-time li{
+  display: inline;
+  margin: -2px;
+  cursor: pointer;
 }
 
-.meal li {
-  display: inline
+.meal-time li.meal{
+	margin-left: 0;
   border-right: 1px solid #e1e5eb;
 }
 
+.meal-time li.time{
+	padding-left: 0.75rem;
+  padding-right: 0.125rem;
+}
 .recipe-actions {
   float: right;
 }
