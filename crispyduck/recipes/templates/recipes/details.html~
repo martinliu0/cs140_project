@@ -17,7 +17,7 @@
         <th><i><p class="description">{{ recipe.description }}</i>
         <br>
         <div class="ingredients">
-        <center><p><b>Ingredients</b></center>
+        <p><b>Ingredients</b>
         {% for ingredient in recipe.get_ingredients %}
             <center><li class="ingredient">{{ ingredient }}</li></center>
         {% endfor %}

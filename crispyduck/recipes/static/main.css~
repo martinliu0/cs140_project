@@ -145,7 +145,7 @@ body #filters {
 }
 
 .webdesigntuts-workshop button:active {
-	background: #A2D8FC;
+	background: #292929;
 	background: linear-gradient(#393939, #292929);
 	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
 	top: 1px;
