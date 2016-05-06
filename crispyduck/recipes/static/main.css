@@ -11,15 +11,18 @@ body #filters {
   padding: 1px;
 }
 
-.welcome h1{
+/*.user {
+  background-color: #7DC1ED;
+}*/
 
+.welcome h1{
     top: 20%;
 	color: white;
-	font-size: 400%;
+	font-size: 450%;
 }
 
 .webdesigntuts-workshop {
-	background: #A2D8FC;
+	background: #2C99E0;
 	height: 100%;
 	position: absolute;
 	text-align: center;
@@ -287,6 +290,24 @@ p {
   color: #0095ff;
 }
 
-#display .description .ingredients {
-  padding-left: 30em;
+/* details page */
+
+h2 {
+  padding-left: 1rem;
+}
+
+#display .image {
+  padding-left: 1rem;
+}   
+
+#display .description {
+  padding-left: 1rem;
+}  
+
+#display .ingredients {
+  padding-left: 1rem;
+}
+
+.instructions {
+  padding-right: 2rem;
 }

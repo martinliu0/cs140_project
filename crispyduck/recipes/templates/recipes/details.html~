@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
     {% block main %}
-        <p><h2><span class="recipename">{{ recipe.name }}</span></h2></p>
+        <p><h2 class="recipename">{{ recipe.name }}</h2></p>
        <table id="display">
        <tr>
-       <th>
+       <th class="image">
         {% if recipe.image.url.width > recipe.image.url.height %}
             <img src="{{ recipe.image.url }}" width=300>
         {% else %}
@@ -17,7 +17,7 @@
         <th><i><p class="description">{{ recipe.description }}</i>
         <br>
         <div class="ingredients">
-        <p><b>Ingredients</b>
+        <center><p><b>Ingredients</b></center>
         {% for ingredient in recipe.get_ingredients %}
             <center><li class="ingredient">{{ ingredient }}</li></center>
         {% endfor %}
@@ -27,9 +27,11 @@
         <br>
         <div class="instructions">
         <b><p>Instructions</b>
+        <ol>
         {% for instruction in recipe.recipeinstruction_set.all %}
             <li>{{ instruction.get_instruction }}</li>
         {% endfor %}
+        </ol>
         </div>
         <br>
         <div class="review"><b><p>Reviews</b></div>

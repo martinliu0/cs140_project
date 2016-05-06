@@ -4,7 +4,7 @@
 
 <section class="webdesigntuts-workshop">
 	<section class="welcome">
-		<h1>Welcome to Crispy Duck Recipes!</h1>
+		<b><h1>Welcome to Crispy Duck Recipes!</h1></b>
 	</section>
 	<form action="{% url 'main' %}" method="get">
 		{{search_form}}

@@ -45,7 +45,7 @@ class RecipeInstruction(models.Model):
 
 
 	def get_instruction(self):
-		return "{}".format(self.instruction)
+		return "{}. {}".format(self.step, self.instruction)
 
 
 class Review(models.Model):
