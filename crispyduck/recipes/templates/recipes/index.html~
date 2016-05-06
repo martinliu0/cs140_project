@@ -46,5 +46,5 @@
 			</div>
     {% endfor %}
 </div>
-<p>Want to search again? Back to <a href="{% url 'main' %}">main</a>
+<center><p>Want to search again? Back to <a href="{% url 'main' %}">main</a></center>
 {% endblock main %} 

@@ -59,7 +59,7 @@ def index_view(request):
 #        url = "{}?{}".format(reverse('index'),urlencode(settings))
 #        return redirect(url)
     
-    return render(request, 'recipes/index.html')
+    return render(request, 'recipes/index.html', {'recipes': recipes})
 	
 def details_view(request, id):
     recipe = get_object_or_404(Recipe, id=id)
@@ -76,3 +76,6 @@ def review_view(request, id):
     else:
         form = ReviewForm()
     return render(request, "recipes/review.html", {'form':form, 'recipe':recipe})
+    
+def restaurants_view(request):
+    return render(request, "recipes/restaurants.html")

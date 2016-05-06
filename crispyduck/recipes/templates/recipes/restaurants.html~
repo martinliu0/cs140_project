@@ -6,21 +6,27 @@
     {% block main %}
         <h1>Top Restaurants in Cardiff!</h1>
             <p>Don't feel like cooking? Try out one of these fine restaurants in Cardiff!
+            <br>
             <h4><a href="http://www.ymochyndu.com">Y Mochyn Du</a></h4>
-                <img src="https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjkgaDK0sXMAhWCsxQKHZxtDFoQjRwIBw&url=http%3A%2F%2Fbeerlens.com%2F2009%2F12%2F21%2Fy-mochyn-du%2F&psig=AFQjCNGGQr1MazmAPj5nbHjEadyDCYEDFQ&ust=1462630815799638&cad=rjt"/>
+                <img src="http://beerlens.com/wp-content/uploads/2009/12/DSC_6096-1.jpg"/ width=600 height=automatic>
                 <p>A classic Welsh pub with a great location, located only a few steps away from Millenium Stadium and with great views of the beautiful Bute Park and Sophia Gardens.
+            <br>
             <h4><a href="http://www.mintandmustard.com">Mint and Mustard</a></h4>
-                <img src="http://google.localdataimages.com/800_WM/2271/22719011.jpg"/>
+                <img src="http://google.localdataimages.com/800_WM/2271/22719011.jpg"/ width=600 height=automatic>
                 <p>This will have your Indian food cravings satisfied! With a wide range of Indian food classics, there is something for everyone!
+            <br>
             <h4><a href="https://www.tortilla.co.uk/our-food/whats-inside/">Tortilla</a></h4>
-                <img src="https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjQ8_qo1cXMAhXH1hQKHZ-ODzEQjRwIBw&url=https%3A%2F%2Fwww.tortilla.co.uk%2Flocations%2Fcardiff%2F&bvm=bv.121421273,d.ZGg&psig=AFQjCNE36gtySL0AWNgJx0ZyvFxHCcXg6g&ust=1462631561213470"/>
-                <p>Missing Chipotle now that you're in the UK? No worries! Tortilla's got you covered!
+                <img src="https://www.tortilla.co.uk/wp-content/uploads/2016/01/Tortilla_Cardiff_Main.jpg"/ width=600 height=automatic>
+                <p>Missing Chipotle now that you're in Cardiff? No worries! Tortilla's got you covered!
+            <br>
             <h4><a href="http://kaspas.co.uk">Kaspa's</a></h4>
-                <img src="https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=&url=https%3A%2F%2Fplus.google.com%2F117236555937603014422&bvm=bv.121421273,d.ZGg&psig=AFQjCNG9fiqZCQriebO-Ik8mBOfGs9eawg&ust=1462631779669991"/>
+                <img src="http://kaspas.co.uk/wp-content/themes/kaspas-theme/images/page-bg.jpg"/ width=600 height=automatic>
                 <p>Craving something sweet? Kaspa's has a wide range of desserts: from milkshakes to birthday extravaganzas, there is always something to celebrate!
+            <br>
             <h4><a href="https://www.sabrain.com/pubs-and-hotels/south-wales/cardiff/blackweir-tavern/">Blackweir Tavern</a></h4>
-                <img src="https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiFosro1sXMAhUFxxQKHQeHA-sQjRwIBw&url=http%3A%2F%2Fpintof45.blogspot.com%2F2011%2F12%2Fblackweir-tavern.html&psig=AFQjCNEDPr4rGE4zFlbw6iahWirb4gh1zQ&ust=1462631945546361"/>
-                <p>
-                
+                <img src="http://2.bp.blogspot.com/-L7QV1z5jxQ8/TvC29_20qWI/AAAAAAAABNI/YHFao9Zs_o0/s1600/IMAG1959.jpg"/ width=600 height=automatic>
+                <p>A wonderful pub with great outside seating for those beautiful, sunny days! A great meeting spot to socialise, watch sports, and grab a pint.
+        <br>
+        <p>Want to search for recipes? Back to <a href="{% url 'main' %}">main</a>
     {% endblock main %}
 </html>
