@@ -12,8 +12,8 @@ body #filters {
 }
 
 .user {
-  background-color: #BDE6FF;
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  background-color: #9BF4EB;
+  font-family: 'Open Sans', sans-serif;
   padding-left: 1rem;
   padding-top: 1rem;
 }
@@ -32,16 +32,6 @@ body #filters {
 	width: 100%;
 }
 
-.webdesigntuts-workshop:before, .webdesigntuts-workshop:after {
-	content: '';
-	display: block;	
-	height: 1px;
-	left: 50%;
-	margin: 0 0 0 -400px;
-	position: absolute;
-	width: 800px;
-}
-
 .webdesigntuts-workshop:before {
 	background: #444;
 	background: linear-gradient(left, #FFFFFF, #444, #FFFFFF);
@@ -57,7 +47,7 @@ body #filters {
 .webdesigntuts-workshop form {
 	background: #FFFFFF;
 	background-color: #0FA2A2;
-	border: 1px solid #000;
+	border: 1px solid #87EF7C;
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 1px #FFFFFF;
 	display: inline-block;
@@ -67,8 +57,6 @@ body #filters {
 	position: relative;
 	z-index: 1;
 }
-
-
 
 .webdesigntuts-workshop input {
 	background: #222;	
@@ -141,9 +129,9 @@ body #filters {
 
 .webdesigntuts-workshop button:hover,
 .webdesigntuts-workshop button:focus {
-	background: #292929;
+	background: #FFFFFF;
 	background: linear-gradient(#0FA2A2, #9BE1E1);
-	color: #007EA1;
+	color: #87EF7C;
 	outline: none;
 }
 
@@ -166,13 +154,9 @@ body #filters {
 }
 
 /* index page */
-
-.index{
-  background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
-}
 html, body {
-  background-color: #BDE6FF;
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
+  font-family: 'Open Sans', sans-serif;
   color: #555f77;
   -webkit-font-smoothing: antialiased;
 }
@@ -184,7 +168,7 @@ input, textarea {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family:'Open Sans', sans-serif;
   font-size: 1rem;
   color: #555f77;
 }
@@ -245,8 +229,13 @@ p {
   resize: none;
 }
 
+.recipename {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .recipe-description {
   margin-bottom: 1.25rem;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 .other-stuff {
@@ -285,6 +274,7 @@ p {
 .recipe-actions li.review {
   /*padding-left: 0.75rem;*/
   padding-right: 0.125rem;
+  padding-top: 1rem;
 }
 .recipe-actions li:hover {
   color: #0095ff;
@@ -322,12 +312,9 @@ h2 {
 }
 
 .reviewtemplate{
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  background-color:#BDE6FF;
+  font-family: 'Open Sans', sans-serif;
   padding-left: 2rem;
 }
 
-.details{
-  background-image: url("http://www.zingerbug.com/Backgrounds/background_images/baby_blue_diagonal_stripes_seamless_background_pattern.jpg");
-}
+
 

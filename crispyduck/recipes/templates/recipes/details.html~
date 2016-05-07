@@ -2,8 +2,9 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<section class="details">
     {% block main %}
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <section class="details">
         <p><h2 class="recipename">{{ recipe.name }}</h2></p>
        <table id="display">
        <tr>
@@ -42,5 +43,5 @@
             {% endif %}
         <p><a href="{% url 'review' recipe.id %}">Write a review</a>
         <p>Back to <a href="{% url 'index' %}">search results</a></div>
+    </section>
     {% endblock main %}
-</section>

@@ -2,6 +2,8 @@
 {% block main %}
 
 <section class="index">
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <section class="navigation">
       <table>
         <tr>
@@ -20,7 +22,7 @@
 				<div class="avatar" style="background-image: url('{{ recipe.image.url }}')"></div>
 			</div>
 			<div class="recipe-block">
-				<a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a>
+				><a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a>
 				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
 					<div class="other-stuff">
 					    <ul class="meal-time">
