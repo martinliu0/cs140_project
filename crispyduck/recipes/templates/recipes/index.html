@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block main %}
 
-
-<section id="navigation">
+<section class="index">
+<section class="navigation">
       <table>
         <tr>
-          <th><a href ="{% url 'index' %}?sort=appetizer">Appetizers</a></th>
-          <th><a href ="{% url 'index' %}?sort=main">Mains</a></th>
-          <th><a href ="{% url 'index' %}?sort=dessert">Desserts</a></th>
-          <th><a href="{% url 'restaurants' %}">Don't feel like cooking?</a></th>
+          <th><button type="button" class="btn btn-appetizer btn-sm"><a href ="{% url 'index' %}?sort=AT">Appetizers</a></button></th>
+          <th><button type="button" class="btn btn-main btn-sm"><a href ="{% url 'index' %}?sort=MN">Mains</a></button></th>
+          <th><button type="button" class="btn btn-dessert btn-sm"><a href ="{% url 'index' %}?sort=DS">Desserts</a></button></th>
+          <th><button type="button" class="btn btn-restaurants btn-sm"><a href="{% url 'restaurants' %}">Don't feel like cooking?</a></button></th>
         </tr>
         </table>
 </section>
@@ -26,11 +26,11 @@
 					    <ul class="meal-time">
 					       <li class="meal">
 							{% if recipe.meal == 'MN'%}
-								<div type="button" class="btn btn-primary-outline">Main</div>
+								<div class="btn btn-primary-outline">Main</div>
 							{% elif recipe.meal == 'DS' %}
-								<div type="button" class="btn btn-success-outline">Dessert</div>
+								<div class="btn btn-success-outline">Dessert</div>
 							{% else %}
-								<div type="button" class="btn btn-info-outline" nohover>Appetizer</div>
+								<div class="btn btn-info-outline" nohover>Appetizer</div>
 							{% endif %}
 							</li>
 							<li class="time">{{ recipe.get_time_str }}</li>
@@ -38,7 +38,6 @@
 						
 						
 						<ul class="recipe-actions">
-							<li class="save-recipe">Save</li>
 							<li class="review"><a href="{% url 'review' recipe.id %}">Review</a></li>
 						</ul>
 					</div>
@@ -46,5 +45,6 @@
 			</div>
     {% endfor %}
 </div>
-<center><p>Want to search again? Back to <a href="{% url 'main' %}">main</a></center>
+<center><p>Want to search again? Back to <a href="{% url 'main' %}?main=true">main</a></center>
 {% endblock main %} 
+</section>

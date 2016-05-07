@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<section class="details">
     {% block main %}
         <p><h2 class="recipename">{{ recipe.name }}</h2></p>
        <table id="display">
@@ -34,13 +34,13 @@
         </ol>
         </div>
         <br>
-        <div class="review"><b><p>Reviews</b></div>
+        <div class="review"><b><p>Reviews</b>
             {% if recipe.review_set %}
                 {% for review in recipe.review_set.all %}
                     <li class="new-review">{{ review }}</li>
                 {% endfor %}
             {% endif %}
         <p><a href="{% url 'review' recipe.id %}">Write a review</a>
-        <p>Back to <a href="{% url 'index' %}">search results</a>
+        <p>Back to <a href="{% url 'index' %}">search results</a></div>
     {% endblock main %}
-</html>
+</section>

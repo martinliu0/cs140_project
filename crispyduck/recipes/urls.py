@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     url(r'^$', main_view, name='main'),
     url(r'^recipes$', index_view, name='index'),
-    url(r'^(?P<id>\d+)$', details_view, name='details'),
-    url(r'^(?P<id>\d+)/review$', review_view, name='review'),
-    url(r'^restaurants$', restaurants_view, name='restaurants')
+    url(r'^recipes/(?P<id>\d+)$', details_view, name='details'),
+    url(r'^recipes/(?P<id>\d+)/review$', review_view, name='review'),
+    url(r'^recipes/restaurants$', restaurants_view, name='restaurants')
 ]

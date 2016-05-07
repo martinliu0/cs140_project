@@ -12,7 +12,10 @@ body #filters {
 }
 
 .user {
-  background-color: #7DC1ED;
+  background-color: #BDE6FF;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 
 .welcome h1{
@@ -22,7 +25,7 @@ body #filters {
 }
 
 .webdesigntuts-workshop {
-	background: #2C99E0;
+	background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
 	height: 100%;
 	position: absolute;
 	text-align: center;
@@ -41,22 +44,22 @@ body #filters {
 
 .webdesigntuts-workshop:before {
 	background: #444;
-	background: linear-gradient(left, #151515, #444, #151515);
+	background: linear-gradient(left, #FFFFFF, #444, #FFFFFF);
 	top: 192px;
 }
 
 .webdesigntuts-workshop:after {
 	background: #000;
-	background: linear-gradient(left, #151515, #000, #151515);	
+	background: linear-gradient(left, #FFFFFF, #000, #FFFFFF);	
 	top: 191px;
 }
 
 .webdesigntuts-workshop form {
-	background: #111;
-	background: linear-gradient(#1b1b1b, #111);
+	background: #FFFFFF;
+	background-color: #0FA2A2;
 	border: 1px solid #000;
 	border-radius: 5px;
-	box-shadow: inset 0 0 0 1px #272727;
+	box-shadow: inset 0 0 0 1px #FFFFFF;
 	display: inline-block;
 	font-size: 0px;
 	margin: 150px auto 0;
@@ -69,10 +72,9 @@ body #filters {
 
 .webdesigntuts-workshop input {
 	background: #222;	
-	background: linear-gradient(#333, #222);	
+	background-color: #FFFFFF;	
 	border: 1px solid #444;
 	border-radius: 5px 0 0 5px;
-	box-shadow: 0 2px 0 #000;
 	color: #888;
 	display: block;
 	float: left;
@@ -82,7 +84,6 @@ body #filters {
 	height: 40px;
 	margin: 0;
 	padding: 0 10px;
-	text-shadow: 0 -1px 0 #000;
 	width: 400px;
 }
 
@@ -117,13 +118,12 @@ body #filters {
 }
 
 .webdesigntuts-workshop button {
-	background: #222;
-	background: linear-gradient(#333, #222);
+	background: #FFFFFF;
+	background: linear-gradient(#75DEDE, #C6EEEE);
 	box-sizing: content-box;
 	border: 1px solid #444;
 	border-left-color: #000;
 	border-radius: 0 5px 5px 0;
-	box-shadow: 0 2px 0 #000;
 	color: #fff;
 	display: block;
 	float: left;
@@ -142,14 +142,14 @@ body #filters {
 .webdesigntuts-workshop button:hover,
 .webdesigntuts-workshop button:focus {
 	background: #292929;
-	background: linear-gradient(#393939, #292929);
-	color: #5f5;
+	background: linear-gradient(#0FA2A2, #9BE1E1);
+	color: #007EA1;
 	outline: none;
 }
 
 .webdesigntuts-workshop button:active {
 	background: #A2D8FC;
-	background: linear-gradient(#393939, #292929);
+	background: linear-gradient(#FFFFFF, #FFFFFF);
 	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
 	top: 1px;
 }
@@ -157,7 +157,7 @@ body #filters {
 @keyframes glow {
     0% {
 		border-color: white;
-		box-shadow: 0 0 5px rgba(0,150,0,.2), inset 0 0 5px rgba(0,200,0,.1), 0 2px 0 #000;
+		box-shadow: 0 0 5px rgba(0,1,0,.2), inset 0 0 5px rgba(0,200,0,.1), 0 2px 0 #000;
     }	
     100% {
 		border-color: white;
@@ -167,8 +167,11 @@ body #filters {
 
 /* index page */
 
+.index{
+  background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
+}
 html, body {
-  background-color: #f0f2fa;
+  background-color: #BDE6FF;
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   color: #555f77;
   -webkit-font-smoothing: antialiased;
@@ -278,18 +281,20 @@ p {
   margin: -2px;
   cursor: pointer;
 }
-.recipe-actions li.save-recipe {
-  padding-right: 0.75rem;
-  border-right: 1px solid #e1e5eb;
-}
+
 .recipe-actions li.review {
-  padding-left: 0.75rem;
+  /*padding-left: 0.75rem;*/
   padding-right: 0.125rem;
 }
 .recipe-actions li:hover {
   color: #0095ff;
 }
 
+.navigation .sorting .options {
+  padding-right: 1rem;
+  color:#0564A1;
+  
+}
 /* details page */
 
 h2 {
@@ -309,5 +314,20 @@ h2 {
 }
 
 .instructions {
-  padding-right: 2rem;
+  padding-left: 2rem;
 }
+
+.review {
+  padding-left: 2rem;
+}
+
+.reviewtemplate{
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  background-color:#BDE6FF;
+  padding-left: 2rem;
+}
+
+.details{
+  background-image: url("http://www.zingerbug.com/Backgrounds/background_images/baby_blue_diagonal_stripes_seamless_background_pattern.jpg");
+}
+

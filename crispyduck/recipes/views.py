@@ -26,40 +26,41 @@ def main_view(request):
 def index_view(request):
     recipes = Recipe.objects.all()
     
-#    if 'reset' in request.GET:
-#        if 'sortfilt' in request.session:
-#            request.session.pop('sortfilt')
-#        return redirect(reverse('index'))
+    if 'main' in request.GET:
+        if 'sortfilt' in request.session:
+            request.session.pop('sortfilt')
+        return redirect(reverse('main'))
 
     settings = request.session.get('sortfilt', {})
     
     fromsettings = False
-    sortorder = request.GET.get('sort', '')
-    recipes = recipes.filter(meal__icontains=sortorder)
-    settings["sort"]=sortorder
-        
-    #research_form = ResearchForm(request.GET)
     
-    # ignore form errors; just get any cleaned data available
-#    if research_form.is_valid():
-#        pass
+    if 'sort' in request.GET:    
+        sortorder = request.GET.get('sort', '')
+        if len(sortorder) == 0:
+            fromsettings = True
+        recipes = recipes.filter(meal__icontains=sortorder)
+        settings["sort"]=sortorder
+    
+    search_form = MainForm(request.GET)
 
-#    research_string = research_form.cleaned_data.get('recipe_search', None)
-#    if research_string:
-#        recipes = recipes.filter(name__icontains=research_string)
-#        settings['recipe_search'] = research_string
-#    elif 'recipe_search' in settings:
-#        val = settings.get('recipe_search')
-#        recipes = recipes.filter(name__icontains=val)
-#        fromsettings = True
-#        
-    #return render(request, "recipes/index.html", {'recipes':recipes, 'research_form':ResearchForm(initial=research_form.cleaned_data)})
-#    request.session['sortfilt'] = settings
-#    if fromsettings:
-#        url = "{}?{}".format(reverse('index'),urlencode(settings))
-#        return redirect(url)
+    if search_form.is_valid():
+        pass
+
+    search_string = search_form.cleaned_data.get('recipe_name', None)
+    if search_string:
+        recipes = recipes.filter(name__icontains=search_string)
+        settings['recipe_name'] = search_string
+    elif 'recipe_name' in settings:
+        val = settings.get('recipe_name')
+        recipes = recipes.filter(name__icontains=val)
+        fromsettings = True
     
-    return render(request, 'recipes/index.html', {'recipes': recipes})
+    if fromsettings:
+        url = "{}?{}".format(reverse('index'), urlencode(settings))
+        return redirect(url)
+    
+    return render(request, 'recipes/index.html', {'recipes': recipes, 'search_form':MainForm(initial=search_form.cleaned_data)})
 	
 def details_view(request, id):
     recipe = get_object_or_404(Recipe, id=id)

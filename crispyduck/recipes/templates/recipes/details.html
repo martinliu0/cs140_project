@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
     {% block main %}
+    <section class="details">
         <p><h2 class="recipename">{{ recipe.name }}</h2></p>
        <table id="display">
        <tr>
@@ -25,8 +25,8 @@
         </table>
         </div>
         <br>
-        <b><p>Instructions</b>
         <div class="instructions">
+        <b><p>Instructions</b>
         <ol>
         {% for instruction in recipe.recipeinstruction_set.all %}
             <li>{{ instruction.get_instruction }}</li>
@@ -34,13 +34,13 @@
         </ol>
         </div>
         <br>
-        <div class="review"><b><p>Reviews</b></div>
+        <div class="review"><b><p>Reviews</b>
             {% if recipe.review_set %}
                 {% for review in recipe.review_set.all %}
                     <li class="new-review">{{ review }}</li>
                 {% endfor %}
             {% endif %}
         <p><a href="{% url 'review' recipe.id %}">Write a review</a>
-        <p>Back to <a href="{% url 'index' %}">search results</a>
+        <p>Back to <a href="{% url 'index' %}">search results</a></div>
+    </section>
     {% endblock main %}
-</html>
