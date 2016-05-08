@@ -4,16 +4,16 @@
 <section class="index">
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<section class="navigation">
-      <table>
-        <tr>
-          <th><button type="button" class="btn btn-appetizer btn-sm"><a href ="{% url 'index' %}?sort=AT">Appetizers</a></button></th>
-          <th><button type="button" class="btn btn-main btn-sm"><a href ="{% url 'index' %}?sort=MN">Mains</a></button></th>
-          <th><button type="button" class="btn btn-dessert btn-sm"><a href ="{% url 'index' %}?sort=DS">Desserts</a></button></th>
-          <th><button type="button" class="btn btn-restaurants btn-sm"><a href="{% url 'restaurants' %}">Don't feel like cooking?</a></button></th>
-        </tr>
-        </table>
-</section>
+<div class="header">
+<h3>Search Results</h3></div>
+<center>
+<div class="btn-group">
+    <button type="button" class="btn-primary btn-lg"><a href ="{% url 'index' %}?sort=AT">Appetizers</a></button>
+    <button type="button" class="btn-primary btn-lg"><a href ="{% url 'index' %}?sort=MN">Mains</a></button>
+    <button type="button" class="btn-primary btn-lg"><a href ="{% url 'index' %}?sort=DS">Desserts</a></button>
+    <button type="button" class="btn-primary btn-lg"><a href="{% url 'restaurants' %}">Don't feel like cooking?</a></button>
+</div>
+</center>
 <div class="recipe-list">
 	{% for recipe in recipes %}
 		<div class="recipe">
@@ -22,7 +22,7 @@
 				<div class="avatar" style="background-image: url('{{ recipe.image.url }}')"></div>
 			</div>
 			<div class="recipe-block">
-				<section class="recipename"><a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a></section>
+				<a href="{% url 'details' recipe.id %}"><h1>{{ recipe.name }}</h1></a>
 				<p class="recipe-description"> {{ recipe.description|truncatewords:100 }}</p>
 					<div class="other-stuff">
 					    <ul class="meal-time">

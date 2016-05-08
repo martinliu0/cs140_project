@@ -3,8 +3,9 @@
 
 
 <section class="webdesigntuts-workshop">
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Abril+Fatface'>
 	<section class="welcome">
-		<b><h1>Welcome to Crispy Duck Recipes!</h1></b>
+		<h1>Crispy Duck Recipes!</h1>
 	</section>
 	<form action="{% url 'main' %}" method="get">
 		{{search_form}}

@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin:400);
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
 body #filters {
   position: fixed;
   width: 20%;
@@ -20,8 +23,9 @@ body #filters {
 
 .welcome h1{
     top: 20%;
-	color: white;
+	color: #356DD4;
 	font-size: 450%;
+	font-family: 'Abril Fatface', cursive;
 }
 
 .webdesigntuts-workshop {
@@ -93,7 +97,7 @@ body #filters {
 	background: linear-gradient(#333933, #222922);
 	border-color: #393;
 	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-	color: #efe;
+	color: #FFFFFF;
 	outline: none;
 }
 
@@ -154,6 +158,16 @@ body #filters {
 }
 
 /* index page */
+
+.header {
+  color: #356DD4;
+  padding-left: 10px;
+  font-family: 'Abril Fatface', cursive;
+}
+.btn-group {
+  margin: 0px auto;
+}
+
 html, body {
   background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
   font-family: 'Open Sans', sans-serif;
@@ -223,6 +237,7 @@ p {
   vertical-align: top;
   border-radius: 0.1875rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  font-family: 'Open Sans', sans-serif;
 }
 .recipe-block textarea {
   width: 100%;
@@ -243,7 +258,6 @@ p {
   font-size: 0.875rem;
 }
 
-
 .meal-time{
   float: left;
 }
@@ -254,12 +268,12 @@ p {
 }
 
 .meal-time li.meal{
-	margin-left: 0;
+  margin-left: 0;
   border-right: 1px solid #e1e5eb;
 }
 
 .meal-time li.time{
-	padding-left: 0.75rem;
+  padding-left: 0.75rem;
   padding-right: 0.125rem;
 }
 .recipe-actions {
@@ -285,10 +299,11 @@ p {
   color:#0564A1;
   
 }
+
 /* details page */
 
-h2 {
-  padding-left: 1rem;
+h1 {
+  padding-left: 2rem;
 }
 
 #display .image {
@@ -297,14 +312,18 @@ h2 {
 
 #display .description {
   padding-left: 1rem;
+  font-family: 'Open Sans', sans-serif;
+
 }  
 
 #display .ingredients {
   padding-left: 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .instructions {
   padding-left: 2rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .review {

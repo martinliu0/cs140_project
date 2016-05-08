@@ -3,9 +3,8 @@
 
 <!DOCTYPE html>
     {% block main %}
-    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <section class="details">
-        <p><h2 class="recipename">{{ recipe.name }}</h2></p>
+        <p><h1 class="recipename">{{ recipe.name }}</h2></p>
        <table id="display">
        <tr>
        <th class="image">
@@ -16,6 +15,7 @@
         {% endif %}
         </th>
         <th><i><p class="description">{{ recipe.description }}</i>
+        <br>
         <br>
         <div class="ingredients">
         <center><p><b>Ingredients</b></center>
@@ -41,6 +41,7 @@
                     <li class="new-review">{{ review }}</li>
                 {% endfor %}
             {% endif %}
+        <br>
         <p><a href="{% url 'review' recipe.id %}">Write a review</a>
         <p>Back to <a href="{% url 'index' %}">search results</a></div>
     </section>
