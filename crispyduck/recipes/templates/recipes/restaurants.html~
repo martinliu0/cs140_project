@@ -4,29 +4,54 @@
 <!DOCTYPE html>
 <html>
     {% block main %}
-        <h1>Top Restaurants in Cardiff!</h1>
-            <p>Don't feel like cooking? Try out one of these fine restaurants in Cardiff!
+    <section class="restaurants">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Cookie' >
+        <center><h1 class="title">Top Restaurants in Cardiff</h1>
+            <div class="caption">Don't feel like cooking? Try out one of these fine restaurants in Cardiff!</div>
             <br>
-            <h4><a href="http://www.ymochyndu.com">Y Mochyn Du</a></h4>
+            <h3><a href="http://www.ymochyndu.com">Y Mochyn Du</a></h4>
                 <img src="http://beerlens.com/wp-content/uploads/2009/12/DSC_6096-1.jpg"/ width=600 height=automatic>
-                <p>A classic Welsh pub with a great location, located only a few steps away from Millenium Stadium and with great views of the beautiful Bute Park and Sophia Gardens.
+                <br>
+                <br>
+                <b><p>A classic Welsh pub with a great location, located only a few steps away from Millenium Stadium and with great views of the beautiful Bute Park and Sophia Gardens.</b>
             <br>
-            <h4><a href="http://www.mintandmustard.com">Mint and Mustard</a></h4>
+            <br>
+            <br>
+            <h3><a href="http://www.mintandmustard.com">Mint and Mustard</a></h4>
                 <img src="http://google.localdataimages.com/800_WM/2271/22719011.jpg"/ width=600 height=automatic>
-                <p>This will have your Indian food cravings satisfied! With a wide range of Indian food classics, there is something for everyone!
+                <br>
+                <br>
+                <b><p>This will have your Indian food cravings satisfied! With a wide range of Indian food classics, there is something for everyone!</b>
             <br>
-            <h4><a href="https://www.tortilla.co.uk/our-food/whats-inside/">Tortilla</a></h4>
+            <br>
+            <br>
+            <h3><a href="https://www.tortilla.co.uk/our-food/whats-inside/">Tortilla</a></h4>
                 <img src="https://www.tortilla.co.uk/wp-content/uploads/2016/01/Tortilla_Cardiff_Main.jpg"/ width=600 height=automatic>
-                <p>Missing Chipotle now that you're in Cardiff? No worries! Tortilla's got you covered!
+                <br>
+                <br>
+                <b><p>Missing Chipotle now that you're in Cardiff? No worries! Tortilla's got you covered!</b>
             <br>
-            <h4><a href="http://kaspas.co.uk">Kaspa's</a></h4>
+            <br>
+            <br>
+            <h3><a href="http://kaspas.co.uk">Kaspa's</a></h4>
                 <img src="http://kaspas.co.uk/wp-content/themes/kaspas-theme/images/page-bg.jpg"/ width=600 height=automatic>
-                <p>Craving something sweet? Kaspa's has a wide range of desserts: from milkshakes to birthday extravaganzas, there is always something to celebrate!
+                <br>
+                <br>
+                <b><p>Craving something sweet? Kaspa's has a wide range of desserts: from milkshakes to birthday extravaganzas, there is always something to celebrate!</b>
             <br>
-            <h4><a href="https://www.sabrain.com/pubs-and-hotels/south-wales/cardiff/blackweir-tavern/">Blackweir Tavern</a></h4>
+            <br>
+            <br>
+            <h3><a href="https://www.sabrain.com/pubs-and-hotels/south-wales/cardiff/blackweir-tavern/">Blackweir Tavern</a></h4>
                 <img src="http://2.bp.blogspot.com/-L7QV1z5jxQ8/TvC29_20qWI/AAAAAAAABNI/YHFao9Zs_o0/s1600/IMAG1959.jpg"/ width=600 height=automatic>
-                <p>A wonderful pub with great outside seating for those beautiful, sunny days! A great meeting spot to socialise, watch sports, and grab a pint.
+                <br>
+                <br>
+                <b><p>A wonderful pub with great outside seating for those beautiful, sunny days! A great meeting spot to socialise, watch sports, and grab a pint.</b>
         <br>
-        <p>Want to search for recipes? Back to <a href="{% url 'main' %}">main</a>
+        <br>
+        <br>
+        <center><p>Want to search for recipes? Back to <a href="{% url 'main' %}?main=true">main</a></center>
+        </center>
+        </section>
     {% endblock main %}
+
 </html>

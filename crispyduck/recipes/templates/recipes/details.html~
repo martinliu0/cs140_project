@@ -4,7 +4,7 @@
 <!DOCTYPE html>
     {% block main %}
     <section class="details">
-        <p><h1 class="recipename">{{ recipe.name }}</h2></p>
+        <p><h1 class="recipename">{{ recipe.name }}</h1></p>
        <table id="display">
        <tr>
        <th class="image">

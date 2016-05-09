@@ -23,9 +23,10 @@ body #filters {
 
 .welcome h1{
     top: 20%;
-	color: #356DD4;
+	color: #5F8AFF;
 	font-size: 450%;
-	font-family: 'Abril Fatface', cursive;
+	font: 400 130px/0.8 'Cookie', Helvetica, sans-serif;
+	text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
 }
 
 .webdesigntuts-workshop {
@@ -51,7 +52,7 @@ body #filters {
 .webdesigntuts-workshop form {
 	background: #FFFFFF;
 	background-color: #0FA2A2;
-	border: 1px solid #87EF7C;
+	border: 1px solid #5F8AFF;;
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 1px #FFFFFF;
 	display: inline-block;
@@ -149,11 +150,11 @@ body #filters {
 @keyframes glow {
     0% {
 		border-color: white;
-		box-shadow: 0 0 5px rgba(0,1,0,.2), inset 0 0 5px rgba(0,200,0,.1), 0 2px 0 #000;
+		box-shadow: 0 0 5px rgba(0,0,1,.2), inset 0 0 5px rgba(0,0,200,.1), 0 2px 0 #000;
     }	
     100% {
 		border-color: white;
-		box-shadow: 0 0 20px rgba(0,150,0,.6), inset 0 0 10px rgba(0,200,0,.4), 0 2px 0 #000;
+		box-shadow: 0 0 20px rgba(0,0,150,.6), inset 0 0 10px rgba(0,0,200,.4), 0 2px 0 #000;
     }
 }
 
@@ -162,7 +163,7 @@ body #filters {
 .header {
   color: #356DD4;
   padding-left: 10px;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Open Sans', sans-serif;
 }
 .btn-group {
   margin: 0px auto;
@@ -335,5 +336,16 @@ h1 {
   padding-left: 2rem;
 }
 
+.restaurants{
+  font-family: 'Open Sans', sans-serif;
+}
+.restaurants .title {
+  font-family: 'Open Sans', sans-serif;
+  color: #356DD4;
+}
 
+.restaurants .caption {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: medium;
+}
 
