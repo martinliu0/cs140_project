@@ -27,7 +27,7 @@
       <input type="submit" value="login" />
       <input type="hidden" name="next" value="{{ next }}" />
   </form>
-  REVIEW FORM
+  <p>Back to <a href="{% url 'main' %}?main=true">main</a>
 
 
 {% endblock main %}

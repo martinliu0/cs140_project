@@ -4,7 +4,8 @@
 <!DOCTYPE html>
     {% block main %}
     <section class="details">
-        <p><h1 class="recipename">{{ recipe.name }}</h1></p>
+        <center><h1 class="recipename">{{ recipe.name }}</h1></center>
+        <center><div>Time to cook: {{ recipe.get_time_str }}</div></center>
        <table id="display">
        <tr>
        <th class="image">
@@ -35,14 +36,15 @@
         </ol>
         </div>
         <br>
+        {% if recipe.review_set %}
+        {% for review in recipe.review_set.all %}
         <div class="review"><b><p>Reviews</b>
-            {% if recipe.review_set %}
-                {% for review in recipe.review_set.all %}
-                    <li class="new-review">{{ review }}</li>
-                {% endfor %}
-            {% endif %}
+            <li class="new-review">{{ review }}</li>
+        {% empty %}
+        {% endfor %}
+        {% endif %}
         <br>
-        <p><a href="{% url 'review' recipe.id %}">Write a review</a>
+        <a href="{% url 'review' recipe.id %}">Write a review</a>
         <p>Back to <a href="{% url 'index' %}">search results</a></div>
     </section>
     {% endblock main %}

@@ -29,6 +29,10 @@ body #filters {
 	text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
 }
 
+.welcome h3{
+	color: #5F8AFF;
+}
+
 .webdesigntuts-workshop {
 	background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
 	height: 100%;
@@ -94,20 +98,20 @@ body #filters {
 
 .webdesigntuts-workshop input:focus {
 	animation: glow 800ms ease-out infinite alternate;
-	background: #222922;
+	background:#5F8AFF;
 	background: linear-gradient(#333933, #222922);
 	border-color: #393;
 	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-	color: #efe;
+	color: #FFFFFF;
 	outline: none;
 }
 
 .webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
-	color: #efe;
+	color: #FFFFFF;
 }
 
 .webdesigntuts-workshop input:focus:-moz-placeholder {
-	color: #efe;
+	color: #FFFFFF;
 }
 
 .webdesigntuts-workshop button {
@@ -135,7 +139,7 @@ body #filters {
 .webdesigntuts-workshop button:hover,
 .webdesigntuts-workshop button:focus {
 	background: #FFFFFF;
-	background: linear-gradient(#0FA2A2, #9BE1E1);
+	background: linear-gradient(#5F8AFF, #9BE1E1);
 	color: #87EF7C;
 	outline: none;
 }
@@ -165,8 +169,21 @@ body #filters {
   padding-left: 10px;
   font-family: 'Open Sans', sans-serif;
 }
+
 .btn-group {
   margin: 0px auto;
+}
+
+a:link.topbuttons{
+  color: white; 
+}
+
+a:visited.topbuttons{
+  color: white;
+}
+
+.btn-primary{
+  color:white;
 }
 
 html, body {
@@ -270,7 +287,7 @@ p {
 
 .meal-time li.meal{
   margin-left: 0;
-  border-right: 1px solid #e1e5eb;
+  border-right: 1px #FFFFFF;
 }
 
 .meal-time li.time{
@@ -303,10 +320,10 @@ p {
 
 /* details page */
 
-h1 {
-  padding-left: 2rem;
+.recipename{
+  color: #5F8AFF;
+  font-weight: bold;
 }
-
 #display .image {
   padding-left: 1rem;
 }   
@@ -342,6 +359,7 @@ h1 {
 .restaurants .title {
   font-family: 'Open Sans', sans-serif;
   color: #356DD4;
+  font-weight: bold;
 }
 
 .restaurants .caption {

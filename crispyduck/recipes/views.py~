@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from urllib.parse import urlencode
-from django.contrib.messages import info, warning, success
+from django.contrib.messages import info, warning, success, error
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import MainForm, ReviewForm
 from .models import Recipe
+
 
 # Create your views here.
 def main_view(request):
@@ -37,7 +38,7 @@ def index_view(request):
     
     if 'sort' in request.GET:    
         sortorder = request.GET.get('sort', '')
-        if len(sortorder) ==0:
+        if len(sortorder) == 0:
             fromsettings = True
         recipes = recipes.filter(meal__icontains=sortorder)
         settings["sort"]=sortorder
