@@ -170,10 +170,6 @@ body #filters {
   font-family: 'Open Sans', sans-serif;
 }
 
-.btn-group {
-  margin: 0px auto;
-}
-
 a:link.topbuttons{
   color: white; 
 }
@@ -367,7 +363,3 @@ p {
   font-size: medium;
 }
 
-
-.reviewtext {
-  padding-left: 3rem;
-}

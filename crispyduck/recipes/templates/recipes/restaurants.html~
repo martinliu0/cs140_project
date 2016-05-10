@@ -5,7 +5,6 @@
 <html>
     {% block main %}
     <section class="restaurants">
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Cookie' >
         <center><h1 class="title">Top Restaurants in Cardiff</h1>
             <div class="caption">Don't feel like cooking? Try out one of these fine restaurants in Cardiff!</div>
             <br>

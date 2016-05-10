@@ -8,10 +8,10 @@
 <h3>Search Results:</h3></div>
 <center>
 <div class="btn-group">
-    <button type="button" class="btn-primary btn-lg topbuttons" ><a href ="{% url 'index' %}?sort=AT">Appetizers</a></button>
-    <button type="button" class="btn-primary btn-lg topbuttons"><a href ="{% url 'index' %}?sort=MN">Mains</a></button>
-    <button type="button" class="btn-primary btn-lg topbuttons"><a href ="{% url 'index' %}?sort=DS">Desserts</a></button>
-    <button type="button" class="btn-primary btn-lg topbuttons"><a href="{% url 'restaurants' %}">Don't feel like cooking?</a></button>
+    <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=AT ">Appetizers</a>
+    <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=MN">Mains</a>
+    <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=DS">Desserts</a>
+    <a class="btn-primary btn-lg" href="{% url 'restaurants' %}">Don't feel like cooking?</a>
 </div>
 </center>
 <div class="recipe-list">

@@ -45,6 +45,9 @@
         {% endif %}
         <br>
         <a href="{% url 'review' recipe.id %}">Write a review</a>
-        <p>Back to <a href="{% url 'index' %}">search results</a></div>
+        
+        <br>
+        <br>
+        <p><a href="{% url 'main' %}">Not what you're looking for?</a></div>
     </section>
     {% endblock main %}

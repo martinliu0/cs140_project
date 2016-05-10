@@ -8,40 +8,35 @@ from django.contrib.auth.decorators import login_required
 from .forms import MainForm, ReviewForm
 from .models import Recipe
 
-
 # Create your views here.
+
 def main_view(request):
-	print(request.GET)
-
-	if request.method == 'GET':
-		search_form = MainForm(request.GET)
-		if search_form.is_valid():
-			recipes = Recipe.objects.all()
-			search_string = search_form.cleaned_data.get('recipe_name', None)
-			recipes = recipes.filter(name__icontains=search_string)
-			return render(request, 'recipes/index.html', {'recipes': recipes})
-
-	return render(request, 'recipes/main.html', {'search_form': MainForm(initial=search_form.cleaned_data)})
-
+    print(request.GET)
+    if 'recipe_name' in request.session:
+        request.session.pop('recipe_name')
+    if request.method == 'GET':
+        search_form = MainForm(request.GET)
+        if search_form.is_valid():
+            recipes = Recipe.objects.all()
+            search_string = search_form.cleaned_data.get('recipe_name', None)
+            recipes = recipes.filter(name__icontains=search_string)
+            return render(request, 'recipes/index.html', {'recipes': recipes, 'search_form':MainForm(initial=search_form.cleaned_data), "index_query": 'recipe_name={}'.format(search_string)})
+    return render(request, 'recipes/main.html', {'search_form':MainForm(initial=search_form.cleaned_data)})
 
 def index_view(request):
     recipes = Recipe.objects.all()
     
-    if 'main' in request.GET:
-        if 'sortfilt' in request.session:
-            request.session.pop('sortfilt')
+    if not len(request.GET):
+        if 'recipe_name' in request.session:
+            request.session.pop('recipe_name')
+        print ("cleared saved settings")
         return redirect(reverse('main'))
 
-    settings = request.session.get('sortfilt', {})
-    
-    fromsettings = False
+    saved_search = request.session.get('recipe_name', "")
     
     if 'sort' in request.GET:    
         sortorder = request.GET.get('sort', '')
-        if len(sortorder) == 0:
-            fromsettings = True
         recipes = recipes.filter(meal__icontains=sortorder)
-        settings["sort"]=sortorder
     
     search_form = MainForm(request.GET)
 
@@ -49,19 +44,15 @@ def index_view(request):
         pass
 
     search_string = search_form.cleaned_data.get('recipe_name', None)
+    print(search_string, saved_search)
     if search_string:
         recipes = recipes.filter(name__icontains=search_string)
-        settings['recipe_name'] = search_string
-    elif 'recipe_name' in settings:
-        val = settings.get('recipe_name')
-        recipes = recipes.filter(name__icontains=val)
-        fromsettings = True
-    
-    if fromsettings:
-        url = "{}?{}".format(reverse('index'), urlencode(settings))
-        return redirect(url)
-    
-    return render(request, 'recipes/index.html', {'recipes': recipes, 'search_form':MainForm(initial=search_form.cleaned_data)})
+        request.session['recipe_name'] = search_string
+    elif len(saved_search):
+        recipes = recipes.filter(name__icontains=saved_search)
+        search_string=saved_search
+
+    return render(request, 'recipes/index.html', {'recipes': recipes, 'search_form':MainForm(initial=search_form.cleaned_data), "index_query": 'recipe_name={}'.format(search_string)})
 	
 def details_view(request, id):
     recipe = get_object_or_404(Recipe, id=id)
