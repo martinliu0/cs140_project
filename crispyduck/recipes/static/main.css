@@ -170,18 +170,6 @@ body #filters {
   font-family: 'Open Sans', sans-serif;
 }
 
-a:link.topbuttons{
-  color: white; 
-}
-
-a:visited.topbuttons{
-  color: white;
-}
-
-.btn-primary{
-  color:white;
-}
-
 html, body {
   background-image: url("http://www.publicdomainpictures.net/pictures/60000/velka/quatrefoil-pattern-background-blue.jpg");
   font-family: 'Open Sans', sans-serif;
@@ -300,7 +288,6 @@ p {
 }
 
 .recipe-actions li.review {
-  /*padding-left: 0.75rem;*/
   padding-right: 0.125rem;
   padding-top: 1rem;
 }

@@ -10,7 +10,7 @@
 <div class="btn-group">
     <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=AT ">Appetizers</a>
     <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=MN">Mains</a>
-    <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=DS">Desserts</a><
+    <a class="btn-primary btn-lg" href ="{% url 'index' %}?{{index_query}}&sort=DS">Desserts</a>
     <a class="btn-primary btn-lg" href="{% url 'restaurants' %}">Don't feel like cooking?</a>
 </div>
 </center>
@@ -52,6 +52,6 @@
     {% endfor %}
 </div>
 <br>
-<center><p>Want to search again? Back to <a href="{% url 'main' %}?main=true">main</a></center>
+<center><p>Want to search again? Back to <a href="{% url 'main' %}">main</a></center>
 {% endblock main %} 
 </section>
